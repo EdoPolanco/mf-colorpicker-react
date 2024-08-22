@@ -1,15 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const ColorPicker = ({color, handleChangeColor, handleSubmitButtonColor}) => {
-
-  useEffect(() => {
-    // Inicializar tooltips de Bootstrap
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    tooltipTriggerList.forEach(tooltipTriggerEl => {
-      new window.bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
-
   return (
    <form>
     <input type="color" 
