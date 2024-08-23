@@ -10,24 +10,21 @@ export const useColors = () => {
       setColor(e.target.value);
     }
   
-    const handleSubmitButtonColor = (e, buttonType) => {
+    const handleSubmitSaveColor = (e) => {
         e.preventDefault();
 
-        if (buttonType === 'save') {
-            const orderColorList = [color, ...colorList];
-            setColorList(orderColorList);
-            
-        } else if (buttonType === 'delete') {
-            const updatedColorList = colorList.filter(item => item !== color);
-            setColorList(updatedColorList);
-        }
-  
-  
+        const orderColorList = [color, ...colorList];
+        setColorList(orderColorList);
     }
 
+    const handleDeleteColor = (colorToDelete) => {
+      const updatedColorList = colorList.filter(item => item !== colorToDelete);
+      setColorList(updatedColorList);
+    };
+    
     useEffect(() => {
       localStorage.setItem("colors", JSON.stringify(colorList))
     }, [colorList])
     
-    return {color, colorList, handleChangeColor, handleSubmitButtonColor}
+    return {color, colorList, handleChangeColor, handleSubmitSaveColor, handleDeleteColor}
 }

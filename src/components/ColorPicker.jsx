@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ColorPicker = ({color, handleChangeColor, handleSubmitButtonColor}) => {
+const ColorPicker = ({color, handleChangeColor, handleSubmitSaveColor}) => {
   return (
    <form>
     <input type="color" 
@@ -33,7 +33,7 @@ const ColorPicker = ({color, handleChangeColor, handleSubmitButtonColor}) => {
       <button type='submit' 
               className='btn btn-success mr-2' 
               style={{display: "inline-block", margin: "0 1rem"}} 
-              onClick={(event) => handleSubmitButtonColor(event, 'save')} >Guardar color</button>
+              onClick={(event) => handleSubmitSaveColor(event)} >Guardar color</button>
       </h2>
 
     </div>
