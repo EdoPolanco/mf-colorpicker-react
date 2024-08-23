@@ -9,8 +9,9 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    // publicPath: "http://localhost:3001/",
-    publicPath: "https://grand-peony-c00760.netlify.app/",
+    publicPath: argv.mode === "development" 
+                  ? "http://localhost:3001/" 
+                  :"https://grand-peony-c00760.netlify.app/",
   },
 
   resolve: {
